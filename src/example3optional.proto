@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package example3optional;
+
+message NoiseExtensions {
+    repeated bytes webtransport_certhashes = 1;
+}
+
+message NoiseHandshakePayload {
+  optional bytes identity_key = 1;
+  optional bytes identity_sig = 2;
+  NoiseExtensions extensions = 4;
+}
